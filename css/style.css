@@ -8,5 +8,212 @@ body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     /* perguntar para o habib o que eh esse webkit */
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div#container {
+    display: flex;
+    min-width: 100vh;
+    min-height: 100vh;
+    /* nao sei se isso vai dar problema */
+    overflow: hidden;
+}
+
+.logotipo {
+    width: 44.89px;
+    height: 62.4px;
+    position: absolute;
+    margin: 15px 0 0 15px;
+}
+
+nav#nav-bar {
+
+    /* tem algum jeito de fixar isso na tela sem position: absolute ? */
+    /* ajustando o ul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    background: #343A40;
+    border-right: 3px solid #6C757D;
+}
+
+nav#nav-bar .nav-ul {
+    /* ajustando as li's */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* ----------------------------- */
+    list-style-type: none;
+    width: 80%;
+    height: 77.6%;
+}
+
+nav#nav-bar .nav-ul .nav-item {
+    width: 100%;
+    height: 9%;
+    border-radius: 15px;
+    background: #495057;
+    font-size: 1em;
+}
+
+nav#nav-bar .nav-ul .nav-item a{
+    /* centralizando o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/* ---------------------------------- */
+    /* estilização */
+    text-decoration: none;
+    color: #F8F9FA;
+    width: 100%;
+    height: 100%;
+}
+
+section#main-content {
+    width: 80%;
+    background: #212529;
+    color: #F8F9FA;
+}
+
+section#main-content header#main-header #topo {
+    width: 100%;
+    height: 50px;
+    border-bottom: 3px double #CED4DA;
+}
+
+section#main-content header#main-header #topo h1 {
+    margin: 1.5% 71% 1% 7.1%;
+    width: 100%;
+    font-family: 'Trebuchet MS';
+    letter-spacing: 3px;
+    font-size: 2em;
+}
+
+section#main-content header#main-header #header-funcional {
+    display: flex;
+    align-items: center;
+    height: 13%;
+    border-bottom: 2px solid #CED4DA;
+    padding: 1% 5% 
+}
+
+section#main-content header#main-header #header-funcional #novo-piu {
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+    margin-right: 5%;
+    border-right: 1px solid #F8F9FA;
+}
+
+section#main-content header#main-header #header-funcional #novo-piu h2 {
+    font-weight: normal;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    background: #ADB5BD;
+}
+
+section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu img {
+    width: 56px;
+    height: 66.25px;
+}
+
+section#main-content header#main-header #header-funcional #pesquisar-piu {
+    display: flex;
+    align-items: center;
+}
+
+section#main-content header#main-header #header-funcional #pesquisar-piu label {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+section#main-content header#main-header #header-funcional #pesquisar-piu #input-para-pesquisar-pius {
+    height: 30px;
+    width: 230px;
+    border-radius: 9px;
+    outline: none;
+    padding: 10px 40px 10px 10px;
+    font-size: 14px;
+    color: #F8F9FA;
+    
+    /* ajustando pra nao poppar */
+    border: 2px solid transparent;
+
+    /* colocando o ícone de search */
+    background: #6C757D url('/img/search.svg') no-repeat 190px center;
+
+
 
 }
+
+section#main-content header#main-header #header-funcional #pesquisar-piu #input-para-pesquisar-pius:focus {
+    border: 2px solid #ADB5BD;
+    transition: .1s;
+}
+
+section#main-content header#main-header #header-funcional #pesquisar-piu #input-para-pesquisar-pius::placeholder {
+    color: #ADB5BD;
+}
+
+section#main-content main#feed  #lista-de-pius {
+    list-style-type: none;
+}
+
+section#main-content main#feed  #lista-de-pius .piu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #CED4DA;
+    padding: 20px
+}
+
+section#main-content main#feed  #lista-de-pius .piu .profile-picture {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 40px;
+} 
+
+section#main-content main#feed  #lista-de-pius .piu .suporte {
+    display: flex;
+}
+
+section#main-content main#feed  #lista-de-pius .piu #texto-do-piu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 450px;   
+}
+
+section#main-content main#feed  #lista-de-pius .piu #texto-do-piu h3 {
+    margin-bottom: 16px;
+    font-weight: 650;
+    font-size: 14px;
+}
+
+section#main-content main#feed  #lista-de-pius .piu div#actions {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-right: 5px;
+}   
+
+section#main-content main#feed  #lista-de-pius .piu div#actions .action {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+
+
+
+

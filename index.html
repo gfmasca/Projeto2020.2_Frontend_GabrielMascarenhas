@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiuPiwer</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-    
+
+    <div id="container">
+
+        <img src="/img/piu.svg" alt="logotipo" class="logotipo">
+        <nav id="nav-bar">
+            <ul class="nav-ul">
+                <li class="nav-item"><a href=""> Meu perfil </a></li>
+                <li class="nav-item"><a href=""> Busque outros Piuwers</a></li>
+                <li class="nav-item"><a href=""> Upados pela comunidade</a></li>
+                <li class="nav-item"><a href=""> Notificações</a></li>
+                <li class="nav-item"><a href=""> Piu's salvos</a></li>
+            </ul>
+        </nav>
+        <section id="main-content">
+
+            <header id="main-header">
+
+                <div id="topo"><h1> Página Inicial</h1></div>
+
+                <div id="header-funcional">
+                    <div id="novo-piu">
+                        <h2> Dê um piu!</h2>
+                        <button id="adicionar-piu"><img src="/img/piu.svg" alt="botão para dar piu"></button>
+                    </div>
+                    <div id="pesquisar-piu">
+                        <label for="input-para-pesquisar-pius"> Pesquisar Piu's</label>
+                        <input type="text" name="pius" id="input-para-pesquisar-pius" placeholder="Digite o Piu procurado">
+                    </div>
+                </div>
+
+            </header>
+            
+            <main id="feed">
+                <ul id="lista-de-pius">
+                    <li class="piu piu-exemplo">
+                        <div class="suporte">
+                            <img class="profile-picture" src="/img/perfil.jpg" alt="foto de perfil">
+                            <div id="texto-do-piu">
+                                <h3>@masca</h3>
+                                <p>Micróbio</p>
+                            </div>
+                        </div>
+                        <div id="actions">
+                            <span class="numero-likes"></span>
+                            <svg class="action botao-like"  width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 7.31915H20.1277V4.11702C20.1277 1.84689 18.2808 0 16.0106 0C13.7405 0 11.8936 1.84689 11.8936 4.11702V5.24097C11.8936 6.66308 10.9387 7.9292 9.57116 8.31985L8.23404 8.70192V8.69149C8.23404 7.93359 7.6196 7.31915 6.8617 7.31915H1.37234C0.614443 7.31915 0 7.93359 0 8.69149V23.3298C0 24.0877 0.614443 24.7021 1.37234 24.7021H6.8617C7.56672 24.7021 8.14695 24.1702 8.22453 23.4859C9.4471 24.2656 10.8846 24.7021 12.3795 24.7021H21.5C24.2746 24.7021 26.5319 22.4448 26.5319 19.6702V12.3511C26.5319 9.57646 24.2746 7.31915 21.5 7.31915V7.31915ZM5.48936 21.9574H2.74468V10.0638H5.48936V21.9574ZM23.7872 19.6702C23.7872 20.9314 22.7612 21.9574 21.5 21.9574H12.3795C10.7109 21.9574 9.1526 21.1156 8.23404 19.7392V11.5565L10.3251 10.959C12.8647 10.2334 14.6383 7.88208 14.6383 5.24097V4.11702C14.6383 3.36031 15.2539 2.74468 16.0106 2.74468C16.7674 2.74468 17.383 3.36031 17.383 4.11702V8.69149C17.383 9.44938 17.9974 10.0638 18.7553 10.0638H21.5C22.7612 10.0638 23.7872 11.0899 23.7872 12.3511V19.6702Z" fill="black"/></svg>
+                            <span class="numero-dislikes"></span>
+                            <svg class="action botao-dislike" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.3767 -7.62939e-06H17.5632C16.945 -7.62939e-06 16.4362 0.531911 16.3682 1.21616C15.2962 0.436488 14.0357 -7.62939e-06 12.7247 -7.62939e-06H4.72729C2.29432 -7.62939e-06 0.314941 2.25731 0.314941 5.03191V12.3511C0.314941 15.1256 2.29432 17.383 4.72729 17.383H5.93066V20.5851C5.93066 22.8552 7.55015 24.7021 9.54077 24.7021C11.5314 24.7021 13.1509 22.8552 13.1509 20.5851V19.4611C13.1509 18.039 13.9883 16.7729 15.1874 16.3823L16.3599 16.0002V16.0106C16.3599 16.7685 16.8986 17.383 17.5632 17.383H22.3767C23.0413 17.383 23.5801 16.7685 23.5801 16.0106V1.37233C23.5801 0.614435 23.0413 -7.62939e-06 22.3767 -7.62939e-06V-7.62939e-06ZM14.5262 13.7432C12.2994 14.4687 10.7441 16.82 10.7441 19.4611V20.5851C10.7441 21.3418 10.2043 21.9574 9.54077 21.9574C8.87723 21.9574 8.3374 21.3418 8.3374 20.5851V16.0106C8.3374 15.2527 7.79861 14.6383 7.13403 14.6383H4.72729C3.6214 14.6383 2.72168 13.6122 2.72168 12.3511V5.03191C2.72168 3.77072 3.6214 2.74467 4.72729 2.74467H12.7247C14.1879 2.74467 15.5543 3.58647 16.3599 4.96292V13.1456L14.5262 13.7432ZM21.1733 14.6383H18.7666V2.74467H21.1733V14.6383Z" fill="black"/></svg>
+                            <span class="numero-comments"></span>
+                            <svg class="action botao-comment" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.2188 22.8438H14.7813C14.0395 22.8438 13.4375 23.4458 13.4375 24.1875C13.4375 24.9293 14.0395 25.5313 14.7813 25.5313H28.2188C28.9605 25.5313 29.5625 24.9293 29.5625 24.1875C29.5625 23.4458 28.9605 22.8438 28.2188 22.8438ZM30.9063 14.7813H12.0938C11.352 14.7813 10.75 15.3833 10.75 16.125C10.75 16.8668 11.352 17.4688 12.0938 17.4688H30.9063C31.648 17.4688 32.25 16.8668 32.25 16.125C32.25 15.3833 31.648 14.7813 30.9063 14.7813ZM21.5 0C9.62666 0 0 8.42259 0 18.8125C0 24.7506 3.15109 30.0368 8.0625 33.4849V43L17.4808 37.285C18.7843 37.5001 20.1253 37.625 21.5 37.625C33.3747 37.625 43 29.2024 43 18.8125C43 8.42259 33.3747 0 21.5 0ZM21.5 34.9375C19.9305 34.9375 18.4148 34.7548 16.9581 34.4443L10.6317 38.2471L10.7163 32.0148C5.86683 29.0976 2.6875 24.2762 2.6875 18.8125C2.6875 9.9075 11.1101 2.6875 21.5 2.6875C31.8899 2.6875 40.3125 9.9075 40.3125 18.8125C40.3125 27.7175 31.8899 34.9375 21.5 34.9375Z" fill="black"/></svg>
+                            <span class="numero-ups"></span>
+                            <img class = "action botao-up" src="/img/up-arrow.svg" alt="botão para upar o piu">
+                            <span class="numero-saves"></span>
+                            <img class="action botao-save" src="/img/bookmark.svg" alt="botão para salvar o piu">
+                        </div>
+                    </li>
+                </ul>
+            </main>
+
+        </section>
+
+    </div>
+
 </body>
+
 </html>
