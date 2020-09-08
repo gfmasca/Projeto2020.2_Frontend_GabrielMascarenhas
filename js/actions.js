@@ -1,20 +1,22 @@
-let botoes = document.querySelectorAll('.action');
-
-// o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span
-botoes.forEach(botao => {
-    botao.addEventListener('click', () => {
-        if(!ehSpanComment(botao)) {
-            if(mudaClasse(botao) == "agora está ativo") {
-                contador(botao, 'aumenta');
-            } else {
-                contador(botao, 'diminui');
+// isso soh pode iniciar quando o request HTTP chegar
+function carregaAções() {
+    let botoes = document.querySelectorAll('.action');
+    // o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span
+    botoes.forEach(botao => {
+        botao.addEventListener('click', () => {
+            if(!ehSpanComment(botao)) {
+                if(mudaClasse(botao) == "agora está ativo") {
+                    contador(botao, 'aumenta');
+                } else {
+                    contador(botao, 'diminui');
+                }
+            }else {
+                // fazer comentario
+                console.log("ehcomment");
             }
-        }else {
-            // fazer comentario
-            console.log("ehcomment");
-        }
-    })
-});
+        })
+    });
+}
 
 function contador(botao, metodo) {
     let contador = botao.querySelector('p');
