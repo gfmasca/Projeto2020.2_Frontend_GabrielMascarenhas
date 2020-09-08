@@ -120,8 +120,8 @@ section#main-content header#main-header #header-funcional #novo-piu h2 {
 }
 
 section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
@@ -129,8 +129,8 @@ section#main-content header#main-header #header-funcional #novo-piu button#adici
 }
 
 section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu img {
-    width: 56px;
-    height: 66.25px;
+    width: 40px;
+    height: 40px;
 }
 
 section#main-content header#main-header #header-funcional #pesquisar-piu {
@@ -171,7 +171,95 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
     color: #ADB5BD;
 }
 
+div#campo-novo-piu {
+    border-bottom: 2px solid #CED4DA;
+    transition: display .5s;
+    padding: 15px 0 15px 30px;
+    background: #6c757d9d;
+    position: relative;
+}
+
+div.invisible {
+    /* ESSA ERA A IDEIA */
+    /* height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: height .5s;
+    transition: padding .5s; */
+    display: none;
+}
+
+div.visible {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+div#campo-novo-piu div.alinhamento {
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+div#campo-novo-piu div.alinhamento-text-botao {
+    display: flex;
+    align-items: flex-end;
+    justify-content: baseline;
+}
+
+div#campo-novo-piu textarea {
+    /* BOX STYLE */
+    width: 300px;
+    margin: 0 10px;
+    background: #6C757D;
+    border-radius: 20px;
+    padding: 20px;
+    outline:none;
+    border: 2px solid transparent;
+
+    /* FONT STYLE */
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: #F8F9FA;
+}
+
+div#campo-novo-piu textarea::placeholder {
+    color: #ADB5BD;
+}
+
+div#campo-novo-piu textarea:focus {
+    border: 2px solid #ADB5BD;
+    transition: .1s;
+}
+
+div#campo-novo-piu button#postar-piu {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background: #343A40;
+    color: #ADB5BD;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+div#campo-novo-piu p {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    cursor: pointer;
+}
+
+div#campo-novo-piu p:hover {
+    color: #ADB5BD;
+    transition: .2s;
+}
+
+
 section#main-content main#feed  #lista-de-pius {
+    display: flex;
+    flex-direction: column-reverse;
     list-style-type: none;
 }
 

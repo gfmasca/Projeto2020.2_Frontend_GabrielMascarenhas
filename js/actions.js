@@ -4,8 +4,8 @@ function carregaAções() {
     // o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span
     botoes.forEach(botao => {
         botao.addEventListener('click', () => {
-            if(!ehSpanComment(botao)) {
-                if(mudaClasse(botao) == "agora está ativo") {
+            if(!procuraClasse(botao, 'comments')) {
+                if(mudaAtivoInativo(botao) == "agora está ativo") {
                     contador(botao, 'aumenta');
                 } else {
                     contador(botao, 'diminui');
@@ -29,23 +29,21 @@ function contador(botao, metodo) {
     contador.textContent = numero;     
 }
 
-function ehSpanComment(botao) {
-    for(let i = 0; i < botao.classList.length; i++) {
-        if (botao.classList[i] == 'comments') {
+function procuraClasse (elemento, classe) {
+    for (let i = 0; i < elemento.classList.length; i++) {
+        if (elemento.classList[i] == classe) {
             return true;
         }
     }
-    return false;    
+    return false
 }
 
-function mudaClasse(botao) {
-    if (botao.classList[1] == "inativo") {
-        botao.classList.remove('inativo');
-        botao.classList.add('ativo');
+function mudaAtivoInativo(botao) {
+    if (procuraClasse(botao, 'inativo')) {
+        mudaClasse(botao, 'inativo', 'ativo');
         return "agora está ativo";
     } else {
-        botao.classList.remove('ativo');
-        botao.classList.add('inativo');
+        mudaClasse(botao, 'ativo', 'inativo');
         return "agora está inativo";
     }
 }

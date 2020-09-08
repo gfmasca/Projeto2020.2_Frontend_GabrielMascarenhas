@@ -33,16 +33,28 @@
                 <div id="header-funcional">
                     <div id="novo-piu">
                         <h2> Dê um piu!</h2>
-                        <button id="adicionar-piu"><img src="/img/piu.svg" alt="botão para dar piu"></button>
+                        <button id="adicionar-piu"><img src="/img/pen-filled-writing-tool.svg" alt="botão para dar piu"></button>
                     </div>
                     <div id="pesquisar-piu">
                         <label for="input-para-pesquisar-pius"> Pesquisar Piu's</label>
-                        <input type="text" name="pius" id="input-para-pesquisar-pius"
-                            placeholder="Digite o Piu procurado">
+                        <input type="text" name="pius" id="input-para-pesquisar-pius" placeholder="Digite o Piu procurado">
                     </div>
                 </div>
 
             </header>
+
+            <div id="campo-novo-piu" class="invisible">
+                <form action="POST" id="form-novo-piu">
+                    <div class="alinhamento">
+                        <label for="mensagem-novo-piu">Digite a mensagem do Piu: </label>
+                    </div>
+                    <div class="alinhamento-text-botao">
+                        <textarea name="mensagem" id="mensagem-novo-piu" cols="30" rows="10" placeholder="Digite a sua mensagem..." style="resize: none"></textarea>
+                        <button id="postar-piu">Postar Piu</button>
+                    </div>
+                    <p id="fechar-aba">x</p>
+                </form>
+            </div>
 
             <main id="feed">
                 <ul id="lista-de-pius">
@@ -82,6 +94,7 @@
     <!-- ARQUIVOS .js -->
     <script src="/js/loading_pius.js"></script>
     <script src="js/actions.js"></script>
+    <script src="js/adicionar_piu.js"></script>
 
 </body>
 

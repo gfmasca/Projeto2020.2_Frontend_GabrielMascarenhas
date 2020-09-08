@@ -10,7 +10,6 @@ function carregaOsPius() {
             pius.forEach(user => {
                 postarPiu(user);
             });
-            carregaAções();
         } else {
             console.log('Falha ao carregar a página');
             console.log(xhr.responseText);
@@ -25,8 +24,8 @@ function postarPiu (user) {
     let listaDePius = document.querySelector('#lista-de-pius');
     let piu = document.createElement('li');
     piu.classList.add('piu');
-
     listaDePius.appendChild(montarPiu(user, piu));
+    carregaAções();
 }
 
 function montarPiu(user, piu) {
@@ -94,7 +93,9 @@ function montarActions() {
         if (i == 2) {
             span.classList.add('action', 'comments');
         } else {
-            span.classList.add('action', 'inativo');
+            span.classList.add('action')
+            span.classList.add('inativo')
+
         }
         let paragrafo = document.createElement('p');
         paragrafo.textContent = 0;
