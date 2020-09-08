@@ -19,25 +19,30 @@ div#container {
     overflow: hidden;
 }
 
-.logotipo {
-    width: 44.89px;
-    height: 62.4px;
-    position: absolute;
-    margin: 15px 0 0 15px;
-}
 
 nav#nav-bar {
-
-    /* tem algum jeito de fixar isso na tela sem position: absolute ? */
+    /* fixando ela no canto da janela */
+    position: fixed;
+    left: 0;
+    top: 0;
+    
     /* ajustando o ul */
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20%;
+    height: 100%;
     background: #343A40;
     border-right: 3px solid #6C757D;
 }
 
+.logotipo {
+    width: 44.89px;
+    height: 62.4px;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
 nav#nav-bar .nav-ul {
     /* ajustando as li's */
     display: flex;
@@ -73,6 +78,7 @@ nav#nav-bar .nav-ul .nav-item a{
 
 section#main-content {
     width: 80%;
+    margin-left: 20%;
     background: #212529;
     color: #F8F9FA;
 }
@@ -188,7 +194,7 @@ section#main-content main#feed  #lista-de-pius .piu .suporte {
     display: flex;
 }
 
-section#main-content main#feed  #lista-de-pius .piu #texto-do-piu {
+section#main-content main#feed  #lista-de-pius .piu .texto-do-piu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -196,19 +202,19 @@ section#main-content main#feed  #lista-de-pius .piu #texto-do-piu {
     width: 450px;   
 }
 
-section#main-content main#feed  #lista-de-pius .piu #texto-do-piu h3 {
+section#main-content main#feed  #lista-de-pius .piu .texto-do-piu h3 {
     margin-bottom: 16px;
     font-weight: 650;
     font-size: 14px;
 }
 
-section#main-content main#feed  #lista-de-pius .piu div#actions {
+section#main-content main#feed  #lista-de-pius .piu div.actions {
     justify-self: flex-end;
     align-self: flex-end;
     margin-right: 5px;
 }   
 
-section#main-content main#feed  #lista-de-pius .piu div#actions .action {
+section#main-content main#feed  #lista-de-pius .piu div.actions .action {
     width: 26px;
     height: 26px;
     margin-right: 10px;
