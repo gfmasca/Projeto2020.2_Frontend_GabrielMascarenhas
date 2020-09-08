@@ -212,12 +212,25 @@ section#main-content main#feed  #lista-de-pius .piu div.actions {
     justify-self: flex-end;
     align-self: flex-end;
     margin-right: 5px;
+    display: flex;
 }   
 
-section#main-content main#feed  #lista-de-pius .piu div.actions .action {
+section#main-content main#feed  #lista-de-pius .piu div.actions span.action{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: #adb5bd94;
+    cursor: pointer;
+}
+
+section#main-content main#feed  #lista-de-pius .piu div.actions .icone-action {
     width: 26px;
     height: 26px;
-    margin-right: 10px;
+    margin: 0 10px 0 7px;
+}
+
+.ativo{
+    text-decoration: underline;
 }
 
 
