@@ -44,6 +44,7 @@ function montarPiu(user, piu) {
     // adicionando as classes
     divSuporte.classList.add('suporte');
     divParaOTexto.classList.add('texto-do-piu');
+    username.classList.add('username');
 
     divParaOTexto.appendChild(username);
     divParaOTexto.appendChild(mensagem);

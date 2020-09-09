@@ -9,7 +9,6 @@ botaoDeAdicionarPiu.addEventListener('click', function () {
 
 let send = document.querySelector('#postar-piu');
 
-
 // SÓ VAI CONSEGUIR MANDAR SE ESTIVER NO TAMANHO CERTO
 send.addEventListener('click', function(event) {
     event.preventDefault();
@@ -19,7 +18,14 @@ send.addEventListener('click', function(event) {
         username: "@masca",
         imagem: "img/perfil.jpg"
     }
+    // POSTA O PIU
     postarPiu(user);
+    // ZERA O CONTADOR
+    let contador = document.querySelector('#contador');
+    contador.textContent = 0;
+    // DÁ DISABLED NO BOTÃO
+    let botaoDeEnviar = document.querySelector('#postar-piu');
+    botaoDeEnviar.disabled = true;
     form.reset();
 });
 
@@ -34,7 +40,11 @@ let x = document.querySelector('#fechar-aba');
 x.addEventListener('click', function() {
     let form = document.querySelector('#form-novo-piu');
     let divPostarPiu = document.querySelector('#campo-novo-piu');
+    // MUDA CLASSE
     mudaClasse(divPostarPiu, 'visible', 'invisible');
+    // ZERA CONTADOR
+    let contador = document.querySelector('#contador');
+    contador.textContent = 0;
     form.reset();
 });
 

@@ -25,7 +25,7 @@ nav#nav-bar {
     position: fixed;
     left: 0;
     top: 0;
-    
+
     /* ajustando o ul */
     display: flex;
     align-items: center;
@@ -43,6 +43,7 @@ nav#nav-bar {
     left: 10px;
     top: 20px;
 }
+
 nav#nav-bar .nav-ul {
     /* ajustando as li's */
     display: flex;
@@ -63,12 +64,12 @@ nav#nav-bar .nav-ul .nav-item {
     font-size: 1em;
 }
 
-nav#nav-bar .nav-ul .nav-item a{
+nav#nav-bar .nav-ul .nav-item a {
     /* centralizando o texto */
     display: flex;
     align-items: center;
     justify-content: center;
-/* ---------------------------------- */
+    /* ---------------------------------- */
     /* estilização */
     text-decoration: none;
     color: #F8F9FA;
@@ -102,7 +103,7 @@ section#main-content header#main-header #header-funcional {
     align-items: center;
     height: 13%;
     border-bottom: 2px solid #CED4DA;
-    padding: 1% 5% 
+    padding: 1% 5%
 }
 
 section#main-content header#main-header #header-funcional #novo-piu {
@@ -151,12 +152,13 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
     padding: 10px 40px 10px 10px;
     font-size: 14px;
     color: #F8F9FA;
-    
+
     /* ajustando pra nao poppar */
     border: 2px solid transparent;
 
     /* colocando o ícone de search */
-    background: #6C757D url('img/search.svg') no-repeat 190px center;
+    /* POR QUE ISSO NÃO TÁ FUNCIONANDO ??? */
+    background: #6C757D url('/img/search.svg') no-repeat 190px center;
 
 
 
@@ -171,26 +173,30 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
     color: #ADB5BD;
 }
 
+
 div#campo-novo-piu {
-    border-bottom: 2px solid #CED4DA;
-    transition: display .5s;
-    padding: 15px 0 15px 30px;
+    display: flex;
+    flex-direction: column;
     background: #6c757d9d;
     position: relative;
-    transition: height .5s; 
-    display: flex;
+    transition: height .5s;
+    overflow: hidden;
 }
 
 div.invisible {
     height: 0px;
-    margin: 0px;
-    opacity: 0;
 }
 
 div.visible {
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 230px;
+    height: 200px;
+    border-bottom: 2px solid #CED4DA;
+}
+
+div#campo-novo-piu form#form-novo-piu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 15px 0 15px 30px;
 }
 
 div#campo-novo-piu div.alinhamento {
@@ -200,21 +206,21 @@ div#campo-novo-piu div.alinhamento {
 
 div#campo-novo-piu div.alinhamento-text-botao {
     display: flex;
+    height: 100%;
     align-items: flex-end;
-    justify-content: baseline;
 }
 
 div#campo-novo-piu textarea {
     /* BOX STYLE */
     width: 300px;
-    height: 150px;
+    height: 100%;
     margin: 0 10px;
     background: #6C757D;
     border-radius: 20px;
     padding: 20px;
-    outline:none;
     border: 2px solid transparent;
-
+    resize: none;
+    outline: none;
     /* FONT STYLE */
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
@@ -269,13 +275,13 @@ div#campo-novo-piu p#fechar-aba:hover {
 }
 
 
-section#main-content main#feed  #lista-de-pius {
+section#main-content main#feed #lista-de-pius {
     display: flex;
     flex-direction: column-reverse;
     list-style-type: none;
 }
 
-section#main-content main#feed  #lista-de-pius .piu {
+section#main-content main#feed #lista-de-pius .piu {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -283,40 +289,40 @@ section#main-content main#feed  #lista-de-pius .piu {
     padding: 20px
 }
 
-section#main-content main#feed  #lista-de-pius .piu .profile-picture {
+section#main-content main#feed #lista-de-pius .piu .profile-picture {
     width: 70px;
     height: 70px;
     border-radius: 50%;
     margin-right: 40px;
     object-fit: cover;
-} 
+}
 
-section#main-content main#feed  #lista-de-pius .piu .suporte {
+section#main-content main#feed #lista-de-pius .piu .suporte {
     display: flex;
 }
 
-section#main-content main#feed  #lista-de-pius .piu .texto-do-piu {
+section#main-content main#feed #lista-de-pius .piu .texto-do-piu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 450px;   
+    width: 450px;
 }
 
-section#main-content main#feed  #lista-de-pius .piu .texto-do-piu h3 {
+section#main-content main#feed #lista-de-pius .piu .texto-do-piu h3 {
     margin-bottom: 16px;
     font-weight: 650;
     font-size: 14px;
 }
 
-section#main-content main#feed  #lista-de-pius .piu div.actions {
+section#main-content main#feed #lista-de-pius .piu div.actions {
     justify-self: flex-end;
     align-self: flex-end;
     margin-right: 5px;
     display: flex;
-}   
+}
 
-section#main-content main#feed  #lista-de-pius .piu div.actions span.action{
+section#main-content main#feed #lista-de-pius .piu div.actions span.action {
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -324,19 +330,22 @@ section#main-content main#feed  #lista-de-pius .piu div.actions span.action{
     cursor: pointer;
 }
 
-section#main-content main#feed  #lista-de-pius .piu div.actions .icone-action {
+section#main-content main#feed #lista-de-pius .piu div.actions .icone-action {
     width: 26px;
     height: 26px;
     margin: 0 10px 0 7px;
 }
 
-.ativo{
+.ativo {
     text-decoration: underline;
 }
 
-.extrapolou{
+.extrapolou {
     color: red;
     font-weight: 600;
 }
 
-/* disabled: true */
+/* CLASSES DOS PIUS */
+.piu-invisivel {
+    display: none !important;
+}

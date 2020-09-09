@@ -36,20 +36,20 @@
                         <button id="adicionar-piu"><img src="img/pen-filled-writing-tool.svg" alt="botão para dar piu"></button>
                     </div>
                     <div id="pesquisar-piu">
-                        <label for="input-para-pesquisar-pius"> Pesquisar Piu's</label>
+                        <label for="input-para-pesquisar-pius"> Pesquisar Piuwers</label>
                         <input type="text" name="pius" id="input-para-pesquisar-pius" placeholder="Digite o Piu procurado">
                     </div>
                 </div>
 
             </header>
 
-            <div id="campo-novo-piu" class="visible">
+            <div id="campo-novo-piu" class="invisible">
                 <form action="POST" id="form-novo-piu">
                     <div class="alinhamento">
                         <label for="mensagem-novo-piu">Digite a mensagem do Piu: </label>
                     </div>
                     <div class="alinhamento-text-botao">
-                        <textarea name="mensagem" id="mensagem-novo-piu" cols="30" rows="10" placeholder="Digite a sua mensagem..." style="resize: none"></textarea>
+                        <textarea name="mensagem" id="mensagem-novo-piu" placeholder="Digite a sua mensagem..." style="resize: none"></textarea>
                         <div id="alinhamento-botao-contador">
                             <p id="contador">0</p>
                             <p id="tamanho-maximo-caracteres">/140</p>
@@ -66,8 +66,8 @@
                         <div class="suporte">
                             <img class="profile-picture" src="img/perfil.jpg" alt="foto de perfil">
                             <div class="texto-do-piu">
-                                <h3>@masca</h3>
-                                <p>Micróbio</p>
+                                <h3 class="username">@masca</h3>
+                                <p>Micróbio do krl</p>
                             </div>
                         </div>
                         <div class="actions">
@@ -99,6 +99,7 @@
     <script src="js/loading_pius.js"></script>
     <script src="js/actions.js"></script>
     <script src="js/adicionar_piu.js"></script>
+    <script src="js/search_users.js"></script>
 
 </body>
 
