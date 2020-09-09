@@ -62,6 +62,14 @@ nav#nav-bar .nav-ul .nav-item {
     border-radius: 15px;
     background: #495057;
     font-size: 1em;
+    transition: background  .5s, border .5s, letter-spacing .5s;
+    border: 1px solid transparent;
+}
+
+nav#nav-bar .nav-ul .nav-item:hover {
+    background: #6C757D;
+    border: 1px solid #ADB5BD;
+    letter-spacing: 1.2px;
 }
 
 nav#nav-bar .nav-ul .nav-item a {
@@ -126,7 +134,14 @@ section#main-content header#main-header #header-funcional #novo-piu button#adici
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-    background: #ADB5BD;
+    background: #495057;
+    border: 2px solid transparent;
+    transition: background .5s, border .5s;
+}
+
+section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu:hover {
+    background:#CED4DA;
+    border: 2px solid #F8F9FA;
 }
 
 section#main-content header#main-header #header-funcional #novo-piu button#adicionar-piu img {
@@ -159,9 +174,6 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
     /* colocando o ícone de search */
     /* POR QUE ISSO NÃO TÁ FUNCIONANDO ??? */
     background: #6C757D url('/img/search.svg') no-repeat 190px center;
-
-
-
 }
 
 section#main-content header#main-header #header-funcional #pesquisar-piu #input-para-pesquisar-pius:focus {
@@ -179,7 +191,7 @@ div#campo-novo-piu {
     flex-direction: column;
     background: #6c757d9d;
     position: relative;
-    transition: height .5s;
+    transition: height 1s cubic-bezier(.31,.39,.21,1.95);
     overflow: hidden;
 }
 
@@ -286,7 +298,8 @@ section#main-content main#feed #lista-de-pius .piu {
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #CED4DA;
-    padding: 20px
+    padding: 20px;
+    transition: opacity .5s;
 }
 
 section#main-content main#feed #lista-de-pius .piu .profile-picture {
@@ -348,4 +361,8 @@ section#main-content main#feed #lista-de-pius .piu div.actions .icone-action {
 /* CLASSES DOS PIUS */
 .piu-invisivel {
     display: none !important;
+}
+
+.opacity0 {
+    opacity: 0 !important;
 }

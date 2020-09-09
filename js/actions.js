@@ -4,15 +4,17 @@ function carregaAções(piu) {
     // o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span    
     botoes.forEach(botao => {
         botao.addEventListener('click', function () {
-            if (!procuraClasse(this, 'comments')) {
+            if (!procuraClasse(this, 'delete-piu')) {
                 if (mudaAtivoInativo(this) == "agora está ativo") {
                     contadorDeAcao(this, 'aumenta');
                 } else {
                     contadorDeAcao(this, 'diminui');
                 }
             } else {
-                // fazer comentario
-                console.log("ehcomment");
+                this.parentNode.parentNode.classList.add('opacity0');
+                setTimeout(() => {
+                    this.parentNode.parentNode.classList.add('piu-invisivel');
+                }, 500);
             }
         })
     });

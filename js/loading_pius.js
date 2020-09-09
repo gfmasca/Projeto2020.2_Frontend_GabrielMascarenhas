@@ -73,36 +73,33 @@ function montarActions() {
 
     let imagensSrc = [
         "img/like.svg",
-        "img/dislike.svg",
-        "img/speech-bubble.svg",
-        "img/up-arrow.svg",
-        "img/bookmark.svg"
+        "img/bookmark.svg",
+        "img/x-mark.svg"
     ]
     let imagensAlt = [
         "botão de like",
-        "botão de dislike",
-        "botão para comentário",
-        "botão para upar o piu",
-        "botão para salvar o piu"
+        "botão para salvar o piu",
+        "botão para deletar piu do seu feed"
     ]
     let divActions = document.createElement('div');
     divActions.classList.add('actions');
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < imagensAlt.length; i++) {
         let span = document.createElement('span');
-        if (i == 2) {
-            span.classList.add('action', 'comments');
-        } else {
+        if (i != 2) {
             span.classList.add('action')
             span.classList.add('inativo')
-
+            let paragrafo = document.createElement('p');
+            paragrafo.textContent = 0;
+            span.appendChild(paragrafo);
+        } else {
+            span.classList.add('action');
+            span.classList.add('delete-piu');
         }
-        let paragrafo = document.createElement('p');
-        paragrafo.textContent = 0;
+
 
         let imagem = createImgElement(['icone-action'], imagensAlt[i], imagensSrc[i]);
 
-        span.appendChild(paragrafo);
         span.appendChild(imagem);
         divActions.appendChild(span);
     }
