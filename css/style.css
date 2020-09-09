@@ -156,7 +156,7 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
     border: 2px solid transparent;
 
     /* colocando o ícone de search */
-    background: #6C757D url('/img/search.svg') no-repeat 190px center;
+    background: #6C757D url('img/search.svg') no-repeat 190px center;
 
 
 
@@ -177,23 +177,20 @@ div#campo-novo-piu {
     padding: 15px 0 15px 30px;
     background: #6c757d9d;
     position: relative;
+    transition: height .5s; 
+    display: flex;
 }
 
 div.invisible {
-    /* ESSA ERA A IDEIA */
-    /* height: 0;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    transition: height .5s;
-    transition: padding .5s; */
-    display: none;
+    height: 0px;
+    margin: 0px;
+    opacity: 0;
 }
 
 div.visible {
-    display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    height: 230px;
 }
 
 div#campo-novo-piu div.alinhamento {
@@ -210,6 +207,7 @@ div#campo-novo-piu div.alinhamento-text-botao {
 div#campo-novo-piu textarea {
     /* BOX STYLE */
     width: 300px;
+    height: 150px;
     margin: 0 10px;
     background: #6C757D;
     border-radius: 20px;
@@ -244,14 +242,28 @@ div#campo-novo-piu button#postar-piu {
     letter-spacing: 2px;
 }
 
-div#campo-novo-piu p {
+div#campo-novo-piu div#alinhamento-botao-contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#campo-novo-piu div#alinhamento-botao-contador p#contador {
+    margin-left: 10px;
+}
+
+div#campo-novo-piu div#alinhamento-botao-contador p#tamanho-maximo-caracteres {
+    margin-right: 10px;
+}
+
+div#campo-novo-piu p#fechar-aba {
     position: absolute;
     right: 10px;
     top: 2px;
     cursor: pointer;
 }
 
-div#campo-novo-piu p:hover {
+div#campo-novo-piu p#fechar-aba:hover {
     color: #ADB5BD;
     transition: .2s;
 }
@@ -276,6 +288,7 @@ section#main-content main#feed  #lista-de-pius .piu .profile-picture {
     height: 70px;
     border-radius: 50%;
     margin-right: 40px;
+    object-fit: cover;
 } 
 
 section#main-content main#feed  #lista-de-pius .piu .suporte {
@@ -321,6 +334,9 @@ section#main-content main#feed  #lista-de-pius .piu div.actions .icone-action {
     text-decoration: underline;
 }
 
+.extrapolou{
+    color: red;
+    font-weight: 600;
+}
 
-
-
+/* disabled: true */

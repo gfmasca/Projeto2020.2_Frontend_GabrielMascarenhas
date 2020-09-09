@@ -1,3 +1,5 @@
+contador();
+
 let botaoDeAdicionarPiu=document.querySelector('#adicionar-piu');
 botaoDeAdicionarPiu.addEventListener('click', function () {
     let divForm = document.querySelector('#campo-novo-piu');
@@ -15,7 +17,7 @@ send.addEventListener('click', function(event) {
     let user = {
         mensagem: form.mensagem.value,
         username: "@masca",
-        imagem: "/img/perfil.jpg"
+        imagem: "img/perfil.jpg"
     }
     postarPiu(user);
     form.reset();
@@ -39,15 +41,26 @@ x.addEventListener('click', function() {
 
 // FALTA VALIDAR OS PIUS
 function validaPiu (){
-    let branco = false;
-// pq isso nao ta dando certo?
-    let form = document.querySelector('#form-novo-piu');
-    let mensagem = document.querySelector('#mensagem-novo-piu')
-    mensagem.addEventListener('input', function() {
-        let contador = mensagem.value;
-        console.log(contador);
-        
-    });
-    
+    let textoDoPiu = document.querySelector('#mensagem-novo-piu');
+    let contador = (textoDoPiu.value === null ? '' : textoDoPiu.value).length;
+    return contador <= 140 && contador != 0 
 }
+
+
+// IMPLEMENTANDO CONTADOR
+function contador () {
+    let mensagem = document.querySelector('#mensagem-novo-piu');
+    let botaoDeEnviar = document.querySelector('#postar-piu');
+    let contador = document.querySelector('#contador');
+    mensagem.addEventListener('input', function() {
+        botaoDeEnviar.disabled = !validaPiu();
+        contador.textContent = this.value.length;
+        if (this.value.length >= 140) {
+            contador.classList.add('extrapolou');
+
+        } else {
+            contador.classList.remove('extrapolou');
+        }
+    });
+}    
 

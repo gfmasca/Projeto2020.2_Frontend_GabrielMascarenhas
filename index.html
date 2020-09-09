@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiuPiwer</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div id="container">
 
         <nav id="nav-bar">
-            <img src="/img/piu.svg" alt="logotipo" class="logotipo">
+            <img src="img/piu.svg" alt="logotipo" class="logotipo">
             <ul class="nav-ul">
                 <li class="nav-item"><a href=""> Meu perfil </a></li>
                 <li class="nav-item"><a href=""> Busque outros Piuwers</a></li>
@@ -26,14 +26,14 @@
 
             <header id="main-header">
 
-                <div id="topo">
+                <!-- <div id="topo">
                     <h1> Página Inicial</h1>
-                </div>
+                </div> -->
 
                 <div id="header-funcional">
                     <div id="novo-piu">
                         <h2> Dê um piu!</h2>
-                        <button id="adicionar-piu"><img src="/img/pen-filled-writing-tool.svg" alt="botão para dar piu"></button>
+                        <button id="adicionar-piu"><img src="img/pen-filled-writing-tool.svg" alt="botão para dar piu"></button>
                     </div>
                     <div id="pesquisar-piu">
                         <label for="input-para-pesquisar-pius"> Pesquisar Piu's</label>
@@ -43,14 +43,18 @@
 
             </header>
 
-            <div id="campo-novo-piu" class="invisible">
+            <div id="campo-novo-piu" class="visible">
                 <form action="POST" id="form-novo-piu">
                     <div class="alinhamento">
                         <label for="mensagem-novo-piu">Digite a mensagem do Piu: </label>
                     </div>
                     <div class="alinhamento-text-botao">
                         <textarea name="mensagem" id="mensagem-novo-piu" cols="30" rows="10" placeholder="Digite a sua mensagem..." style="resize: none"></textarea>
-                        <button id="postar-piu">Postar Piu</button>
+                        <div id="alinhamento-botao-contador">
+                            <p id="contador">0</p>
+                            <p id="tamanho-maximo-caracteres">/140</p>
+                            <button disabled id="postar-piu">Postar Piu</button>
+                        </div>
                     </div>
                     <p id="fechar-aba">x</p>
                 </form>
@@ -60,7 +64,7 @@
                 <ul id="lista-de-pius">
                     <li class="piu piu-exemplo">
                         <div class="suporte">
-                            <img class="profile-picture" src="/img/perfil.jpg" alt="foto de perfil">
+                            <img class="profile-picture" src="img/perfil.jpg" alt="foto de perfil">
                             <div class="texto-do-piu">
                                 <h3>@masca</h3>
                                 <p>Micróbio</p>
@@ -68,19 +72,19 @@
                         </div>
                         <div class="actions">
                             <span class="action inativo"><p>0</p>
-                                <img class="icone-action botao-like" src="/img/like.svg" alt="botão de like">
+                                <img class="icone-action botao-like" src="img/like.svg" alt="botão de like">
                             </span>
                             <span class="action inativo"><p>0</p>
-                                <img class="icone-action botao-dislike" src="/img/dislike.svg" alt="botão de dislike">
+                                <img class="icone-action botao-dislike" src="img/dislike.svg" alt="botão de dislike">
                             </span>
                             <span class="action comments"><p>0</p>
-                                <img class="icone-action botao-comment" src="/img/speech-bubble.svg" alt="botão para comentário">
+                                <img class="icone-action botao-comment" src="img/speech-bubble.svg" alt="botão para comentário">
                             </span>
                             <span class="action inativo"><p>0</p>
-                                <img class="icone-action botao-up" src="/img/up-arrow.svg" alt="botão para upar o piu">
+                                <img class="icone-action botao-up" src="img/up-arrow.svg" alt="botão para upar o piu">
                             </span>
                             <span class="action inativo"><p>0</p>
-                                <img class="icone-action botao-save" src="/img/bookmark.svg" alt="botão para salvar o piu">
+                                <img class="icone-action botao-save" src="img/bookmark.svg" alt="botão para salvar o piu">
                             </span>
                         </div>
                     </li>
@@ -92,7 +96,7 @@
     </div>
 
     <!-- ARQUIVOS .js -->
-    <script src="/js/loading_pius.js"></script>
+    <script src="js/loading_pius.js"></script>
     <script src="js/actions.js"></script>
     <script src="js/adicionar_piu.js"></script>
 

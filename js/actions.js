@@ -1,16 +1,16 @@
 // isso soh pode iniciar quando o request HTTP chegar
-function carregaAções() {
-    let botoes = document.querySelectorAll('.action');
-    // o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span
+function carregaAções(piu) {
+    let botoes = piu.querySelectorAll('.action');
+    // o botoes eh o array de spans (que tem o contador e a imagem) e o botao eh uma span    
     botoes.forEach(botao => {
-        botao.addEventListener('click', () => {
-            if(!procuraClasse(botao, 'comments')) {
-                if(mudaAtivoInativo(botao) == "agora está ativo") {
-                    contador(botao, 'aumenta');
+        botao.addEventListener('click', function () {
+            if (!procuraClasse(this, 'comments')) {
+                if (mudaAtivoInativo(this) == "agora está ativo") {
+                    contadorDeAcao(this, 'aumenta');
                 } else {
-                    contador(botao, 'diminui');
+                    contadorDeAcao(this, 'diminui');
                 }
-            }else {
+            } else {
                 // fazer comentario
                 console.log("ehcomment");
             }
@@ -18,7 +18,7 @@ function carregaAções() {
     });
 }
 
-function contador(botao, metodo) {
+function contadorDeAcao(botao, metodo) {
     let contador = botao.querySelector('p');
     let numero = parseInt(contador.textContent);
     if (metodo == 'aumenta') {
@@ -26,10 +26,10 @@ function contador(botao, metodo) {
     } else {
         numero--;
     }
-    contador.textContent = numero;     
+    contador.textContent = numero;
 }
 
-function procuraClasse (elemento, classe) {
+function procuraClasse(elemento, classe) {
     for (let i = 0; i < elemento.classList.length; i++) {
         if (elemento.classList[i] == classe) {
             return true;

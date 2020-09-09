@@ -13,7 +13,7 @@ function carregaOsPius() {
         } else {
             console.log('Falha ao carregar a página');
             console.log(xhr.responseText);
-            console.log(xhr.status);            
+            console.log(xhr.status);
         }
     })
 
@@ -25,13 +25,12 @@ function postarPiu (user) {
     let piu = document.createElement('li');
     piu.classList.add('piu');
     listaDePius.appendChild(montarPiu(user, piu));
-    carregaAções();
 }
 
 function montarPiu(user, piu) {
     let divActions = montarActions();
 
-    let profilePicture = createImgElement(['profile-picture'], "imagem de perfil", user.imagem);
+    let profilePicture = createImgElement(['profile-picture'], "imagem de perfil", user.imagem.split(".jpg")[0] + "s.jpg");
 
     let username = document.createElement('h3');
     username.textContent = user.username;
@@ -54,7 +53,7 @@ function montarPiu(user, piu) {
     
     piu.appendChild(divSuporte);
     piu.appendChild(divActions);
-    
+    carregaAções(piu);
     return piu;
 
 }
@@ -72,11 +71,11 @@ function createImgElement(classList, alt, src) {
 function montarActions() {
 
     let imagensSrc = [
-        "/img/like.svg",
-        "/img/dislike.svg",
-        "/img/speech-bubble.svg",
-        "/img/up-arrow.svg",
-        "/img/bookmark.svg"
+        "img/like.svg",
+        "img/dislike.svg",
+        "img/speech-bubble.svg",
+        "img/up-arrow.svg",
+        "img/bookmark.svg"
     ]
     let imagensAlt = [
         "botão de like",
