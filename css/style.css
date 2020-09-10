@@ -173,7 +173,7 @@ section#main-content header#main-header #header-funcional #pesquisar-piu #input-
 
     /* colocando o ícone de search */
     /* POR QUE ISSO NÃO TÁ FUNCIONANDO ??? */
-    background: #6C757D url('/img/search.svg') no-repeat 190px center;
+    background: #6C757D url('../img/search.svg') no-repeat 190px center;
 }
 
 section#main-content header#main-header #header-funcional #pesquisar-piu #input-para-pesquisar-pius:focus {
@@ -349,6 +349,11 @@ section#main-content main#feed #lista-de-pius .piu div.actions .icone-action {
     margin: 0 10px 0 7px;
 }
 
+section#main-content main#feed #lista-de-pius .piu div.actions .icone-action:hover {
+    opacity: 0.5;
+    transition: .3s;
+}
+
 .ativo {
     text-decoration: underline;
 }
@@ -365,4 +370,8 @@ section#main-content main#feed #lista-de-pius .piu div.actions .icone-action {
 
 .opacity0 {
     opacity: 0 !important;
+}
+
+.piu-apagado {
+    display: none !important;
 }

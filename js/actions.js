@@ -13,7 +13,7 @@ function carregaAções(piu) {
             } else {
                 this.parentNode.parentNode.classList.add('opacity0');
                 setTimeout(() => {
-                    this.parentNode.parentNode.classList.add('piu-invisivel');
+                    this.parentNode.parentNode.classList.add('piu-apagado');
                 }, 500);
             }
         })
